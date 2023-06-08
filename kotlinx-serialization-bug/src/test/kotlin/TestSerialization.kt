@@ -40,7 +40,7 @@ object UUIDAdapter : KSerializer<UUID> {
 
 class TestSerialization {
     @Test
-    fun `test serialization bug with contextual adapters for arrays`() = testApplication {
+    fun `test serialization regression for list of type with contextual adapter`() = testApplication {
         val testHttpClient = createClient {
             install(ContentNegotiation) {
                 json(
